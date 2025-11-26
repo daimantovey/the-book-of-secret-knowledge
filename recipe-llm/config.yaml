@@ -1,0 +1,41 @@
+# Recipe LLM Configuration
+
+# Default LLM provider: openai, anthropic, or ollama
+default_provider: "openai"
+
+# Model settings
+models:
+  openai: "gpt-4-turbo-preview"
+  anthropic: "claude-3-5-sonnet-20241022"
+  ollama: "llama2"
+
+# Generation parameters
+temperature: 0.7  # Randomness (0.0-1.0, higher = more creative)
+max_tokens: 2000  # Maximum response length
+
+# Features
+conversation_history: true  # Maintain conversation context
+save_recipes: true  # Auto-save recipes to files
+output_format: "markdown"  # Output format: markdown or json
+
+# Web interface settings
+web:
+  host: "0.0.0.0"
+  port: 5000
+  debug: false
+
+# CLI settings
+cli:
+  use_rich: true  # Use rich text formatting
+  interactive_mode: true  # Enable interactive mode
+
+# Recipe defaults
+recipes:
+  default_servings: 4
+  measurement_system: "imperial"  # imperial or metric
+  include_nutrition: false  # Request nutritional info (may not always be available)
+
+# Logging
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  file: "recipe_llm.log"
