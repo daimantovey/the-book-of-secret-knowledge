@@ -1,0 +1,15 @@
+# Render.com deployment configuration for Recipe LLM
+
+services:
+  - type: web
+    name: recipe-llm
+    env: python
+    buildCommand: pip install -r requirements.txt && python generate_icons.py
+    startCommand: python src/web_app.py
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: PYTHON_VERSION
+        value: 3.11.0
